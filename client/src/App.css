@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Caprasimo&family=DM+Serif+Text:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.App {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://wallpapercave.com/wp/wp4725771.jpg');
+  background-size: cover;
+  background-position: center;
+  cursor: url('https://i.postimg.cc/ZqGVBhz8/rocket.png'), auto;
+}
+
+.App-header {
+  font-size: 5rem;
+  color: white;
+  font-family: 'Averia Serif Libre', serif; /* Choose the font you prefer */
+}
