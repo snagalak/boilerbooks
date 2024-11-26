@@ -22,7 +22,7 @@ export default function BookReport() {
     // Fetch genres from the API
     async function fetchGenres() {
       try {
-        const response = await fetch("http://localhost:5050/record/genres");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/genres");
         if (!response.ok) {
           throw new Error(`Error fetching genres: ${response.statusText}`);
         }
@@ -35,7 +35,7 @@ export default function BookReport() {
 
     async function fetchAuthors() {
       try {
-        const response = await fetch("http://localhost:5050/record/authors");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/authors");
         if (!response.ok) {
           throw new Error(`Error fetching authors: ${response.statusText}`);
         }
@@ -48,7 +48,7 @@ export default function BookReport() {
 
     async function fetchUsers() {
       try {
-        const response = await fetch("http://localhost:5050/record/users");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/users");
         if (!response.ok) {
           throw new Error(`Error fetching users: ${response.statusText}`);
         }
@@ -64,7 +64,7 @@ export default function BookReport() {
       if (!id) return;
       setIsNew(false);
       const response = await fetch(
-        `http://localhost:5050/record/${params.id.toString()}`
+        `https://boilerbooksbackend.vercel.app/record/${params.id.toString()}`
       );
       if (!response.ok) {
         console.error(`An error has occurred: ${response.statusText}`);
@@ -112,7 +112,7 @@ export default function BookReport() {
       }
 
       const requests = [
-        fetch(`http://localhost:5050/record/check?${params.toString()}`),
+        fetch(`https://boilerbooksbackend.vercel.app/record/check?${params.toString()}`),
       ];
 
       let includeAdditionalData = false;
@@ -120,11 +120,11 @@ export default function BookReport() {
       if (params.has("author_id")) {
         includeAdditionalData = true;
         requests.push(
-          fetch(`http://localhost:5050/record/avgprice?${params.toString()}`),
+          fetch(`https://boilerbooksbackend.vercel.app/record/avgprice?${params.toString()}`),
           fetch(
-            `http://localhost:5050/record/commongenre?${params.toString()}`
+            `https://boilerbooksbackend.vercel.app/record/commongenre?${params.toString()}`
           ),
-          fetch(`http://localhost:5050/record/rating?${params.toString()}`)
+          fetch(`https://boilerbooksbackend.vercel.app/record/rating?${params.toString()}`)
         );
       }
 

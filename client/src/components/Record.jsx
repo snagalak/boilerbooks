@@ -23,7 +23,7 @@ export default function BookForm() {
     // Fetch genres from the API
     async function fetchGenres() {
       try {
-        const response = await fetch("http://localhost:5050/record/genres");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/genres");
 
         if (!response.ok) {
           throw new Error(`Error fetching genres: ${response.statusText}`);
@@ -39,7 +39,7 @@ export default function BookForm() {
     async function fetchAuthors() {
       try {
         console.log("Fetching genres...");
-        const response = await fetch("http://localhost:5050/record/authors");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/authors");
 
         if (!response.ok) {
           throw new Error(`Error fetching genres: ${response.statusText}`);
@@ -55,7 +55,7 @@ export default function BookForm() {
 
     async function fetchUsers() {
       try {
-        const response = await fetch("http://localhost:5050/record/users");
+        const response = await fetch("https://boilerbooksbackend.vercel.app/record/users");
 
         if (!response.ok) {
           throw new Error(`Error fetching genres: ${response.statusText}`);
@@ -73,7 +73,7 @@ export default function BookForm() {
       if (!id) return;
       setIsNew(false);
       const response = await fetch(
-        `http://localhost:5050/record/${params.id.toString()}`
+        `https://boilerbooksbackend.vercel.app/record/${params.id.toString()}`
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
@@ -108,7 +108,7 @@ export default function BookForm() {
     try {
       let response;
       if (isNew) {
-        response = await fetch("http://localhost:5050/record", {
+        response = await fetch("https://boilerbooksbackend.vercel.app/record", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -116,7 +116,7 @@ export default function BookForm() {
           body: JSON.stringify(bookData),
         });
       } else {
-        response = await fetch(`http://localhost:5050/record/${params.id}`, {
+        response = await fetch(`https://boilerbooksbackend.vercel.app/record/${params.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
