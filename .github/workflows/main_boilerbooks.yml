@@ -23,6 +23,7 @@ jobs:
         run: |
           cd server
           npm install
+          node --env-file=config.env server
 
      
       
@@ -30,8 +31,7 @@ jobs:
         run: |
           cd client
           npm install
-          npm run build
-          cp -r ./build ../server/public
+          npm run dev
 
             
       - name: Upload artifact for deployment job
