@@ -14,6 +14,7 @@ mongoose.connect(mongoURI)
 .catch(err => console.error("MongoDB connection error:", err));
 
 app.use(cors());
+app.use(express.json())
 app.use(express.static("./client/dist"));
 app.use("/record", records);
 app.get("*",(req,res)=> {
