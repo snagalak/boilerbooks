@@ -13,11 +13,8 @@ mongoose.connect(mongoURI)
 
 app.use(cors());
 app.use(express.json())
-app.use(express.static("./client/dist"));
 app.use("/record", records);
-app.get("*",(req,res)=> {
-  res.sendFile(path.resolve(__dirname,"client","dist","index.html"))
-})
+
 
 
 app.listen(PORT, () => {
