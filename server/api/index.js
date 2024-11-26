@@ -2,11 +2,14 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";  
 import records from "../routes/record.js";
+import dotenv from 'dotenv';
+
+dotenv.config({ path: './config.env' });
 
 const PORT = process.env.PORT || 5050;
 const app = express();
 
-const mongoURI = process.env.ATLAS_URI; 
+const mongoURI = process.env.ATLAS_URI;
 mongoose.connect(mongoURI)
 .then(() => console.log("MongoDB connected"))
 .catch(err => console.error("MongoDB connection error:", err));
