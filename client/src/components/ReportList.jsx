@@ -41,7 +41,7 @@ export default function ReportList({ books }) {
   }, [records.length]);
 
   async function deleteRecord(id) {
-    await fetch(`https://boilerbooks.azurewebsites.net/record/${id}`, {
+    await fetch(`http://localhost:5050/record/${id}`, {
       method: "DELETE",
     });
     const newRecords = records.filter((el) => el._id !== id);
