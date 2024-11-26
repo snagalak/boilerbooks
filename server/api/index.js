@@ -14,6 +14,7 @@ mongoose.connect(mongoURI)
 app.use(cors());
 app.use(express.json())
 app.use("/record", records);
+
 app.get("/",(req,res)=>res.status(200).json({message: "Hello World"}));
 
 app.listen(PORT, () => {
