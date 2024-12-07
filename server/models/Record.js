@@ -1,20 +1,20 @@
 import mongoose from "mongoose";
 
 const ListSchema = new mongoose.Schema({
-  book_ISBN: { type: Number, index: true },
-  user_name: { type: String}, // Foreign Key reference to Users
+  book_ISBN: { type: Number },
+  user_name: { type: String}, 
   title: { type: String},
   price: { type: Number },
-  genre_name: { type: String }, // Reference to Genre
+  genre_name: { type: String, index: true }, 
   condition: { type: String },
   date_listed: { 
     type: String, 
     default: () => {
       const today = new Date();
-      return today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+      return today.toISOString().split("T")[0]; 
     }
   },
-  author_name: { type: String}, // Reference to Author
+  author_name: { type: String, index: true}, 
   rating: { type: Number }
 });
 
